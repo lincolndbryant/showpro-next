@@ -1,0 +1,176 @@
+#root {
+  --scroll-progress: 0;
+
+  margin: 0 auto;
+  padding: 0;
+  /*height: 300vh;*/
+  overflow: hidden;
+  text-align: left;
+  min-width: 600px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  overflow: hidden;
+  background: #242e39;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+header .logo svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0.11) translateX(22%) translateY(-225%);
+  transform-origin: center;
+}
+
+header.is-fixed {
+  opacity: 1;
+  position: fixed;
+  z-index: 100;
+  box-shadow: 0 0 10px #aaa;
+}
+
+h1 {
+  text-transform: uppercase;
+  position: relative;
+  text-align: left;
+  font-weight: 800;
+}
+
+main {
+  background: black;
+}
+
+nav {
+  position: fixed;
+  background: #242e39;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  top: 1rem;
+  right: 1rem;
+  z-index: 101;
+}
+
+nav a {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+div.hero {
+  position: relative;
+  display: flex;
+  font-size: 3.5rem;
+  font-weight: 800;
+  padding: 250px 0;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  background-image: url("https://showpro.net/images/igallery/original/201-300/irvine_spectrum_giant_wheel-231.jpg");
+  opacity: calc(1 - var(--scroll-progress));
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  box-shadow: 0 0 25px 25px black inset;
+  z-index: 1;
+}
+
+.company-name {
+  position: relative;
+  z-index: 1;
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
+.slides {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+  background-color: black;
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .gallery-item {
+    flex-basis: 100%;
+  }
+}
+
+.gallery-item > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item .item-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 250ms;
+}
+
+.gallery-item:hover .item-bg {
+  background: linear-gradient(160deg, #00af79 0%, #00739a 100%);
+  opacity: 1;
+}
+
+/*
+linear-gradient(160deg, #F98EE8 0%, #A4369C 100%)
+linear-gradient(160deg, #00AF79 0%, #00739A 100%)
+ */
+
+.gallery-item h3 {
+  font-size: 2rem;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 1rem;
+  left: 1rem;
+  text-transform: uppercase;
+}
+
+.gallery-item h3:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  position: relative;
+  margin: 10px;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 2;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
