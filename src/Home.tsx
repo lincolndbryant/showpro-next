@@ -37,7 +37,7 @@ const SLIDES = [
 
 export const Home = () => {
   const [fixHeader, setFixHeader] = useState(false);
-  const pageRef = useRef<HTMLDivElement>();
+  const pageRef = useRef<HTMLDivElement>(null);
 
   return (
     <div ref={pageRef}>
@@ -76,7 +76,9 @@ export const Home = () => {
           endScroll={320}
           translateX={[0, -32]}
           onProgressChange={(progress) => {
-            pageRef.current.style.setProperty("--scroll-progress", progress);
+            if (pageRef.current) {
+              pageRef.current.style.setProperty("--scroll-progress", String(progress));
+            }
             setFixHeader(progress >= 1);
           }}
         >
