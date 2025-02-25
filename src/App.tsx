@@ -6,7 +6,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/showpro-next/" element={<Home />} />
         <Route path="/capabilities" element={<Capabilities />} />
         <Route path="/contact" element={<Capabilities />} />
         <Route path="/careers" element={<Capabilities />} />
