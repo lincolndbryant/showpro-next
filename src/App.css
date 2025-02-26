@@ -42,6 +42,7 @@ header blockquote {
 }
 header .social-links {
   padding-right: 1rem;
+  justify-content: flex-end;
 }
 
 header.is-fixed,

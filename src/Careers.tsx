@@ -1,4 +1,5 @@
 import { Header } from "./Header.tsx";
+import { Footer } from "./Footer.tsx";
 
 export const Careers = () => {
   return (
@@ -22,12 +23,7 @@ export const Careers = () => {
           Please let us know if you would like to join our freelance audio,
           video, lighting, LED or programming teams.
         </p>
-        <a
-          className="button"
-          href="mailto:info@showpro.net"
-          target="_blank"
-          id="btn-cfc534e5-2704-4bcd-a7fe-5d53e631292a"
-        >
+        <a className="button" href="mailto:info@showpro.net" target="_blank">
           FREELANCER INQUIRIES
         </a>
 
@@ -39,6 +35,8 @@ export const Careers = () => {
           come join our team!
         </p>
       </div>
+
+      <Footer />
     </>
   );
 };
