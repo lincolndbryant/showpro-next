@@ -1,10 +1,8 @@
-import { Header } from "./Header.tsx";
-import { Footer } from "./Footer.tsx";
+import { Page } from "./Page.tsx";
 
 export const Careers = () => {
   return (
-    <>
-      <Header />
+    <Page>
       <div className="hero-banner">
         <img
           className="hero"
@@ -35,8 +33,6 @@ export const Careers = () => {
           come join our team!
         </p>
       </div>
-
-      <Footer />
-    </>
+    </Page>
   );
 };

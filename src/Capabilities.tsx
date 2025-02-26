@@ -1,14 +1,11 @@
-import { Header } from "./Header.tsx";
-import { Footer } from "./Footer.tsx";
+import { Page } from "./Page.tsx";
 
 export const Capabilities = () => {
   return (
-    <>
-      <Header />
+    <Page>
       <div className="route-careers">
         <h2>Capabilities</h2>
       </div>
-      <Footer />
-    </>
+    </Page>
   );
 };

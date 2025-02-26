@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import { Header } from "./Header.tsx";
 // @ts-expect-error no types
 import Masonry from "masonry-layout";
+import { Page } from "./Page.tsx";
 
 const GALLERY = [
   "https://www.showpro.net/images/igallery/resized/401-500/cyw-adidasallstar-107-450-680-1000-100.jpg",
@@ -105,13 +105,12 @@ export const SpecialEvents = () => {
   }, []);
 
   return (
-    <>
-      <Header />
+    <Page>
       <div ref={grid} className="masonry-grid">
         {GALLERY.map((imgSrc) => (
           <img key={imgSrc} src={imgSrc} />
         ))}
       </div>
-    </>
+    </Page>
   );
 };
