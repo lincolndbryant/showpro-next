@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Header } from "./Header.tsx";
+// @ts-expect-error no types
 import Masonry from "masonry-layout";
 
 const GALLERY = [

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Parallax } from "react-scroll-parallax";
 import "./App.css";
 import { Link } from "react-router";
