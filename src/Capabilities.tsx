@@ -1,3 +1,12 @@
+import { Header } from "./Header.tsx";
+
 export const Capabilities = () => {
-  return <h2>Capabilities</h2>;
+  return (
+    <>
+      <Header />
+      <div className="route-careers">
+        <h2>Capabilities</h2>
+      </div>
+    </>
+  );
 };

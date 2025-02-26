@@ -1,11 +1,11 @@
 #root {
   --scroll-progress: 0;
-
   margin: 0 auto;
   padding: 0;
   /*height: 300vh;*/
   overflow: hidden;
   text-align: left;
+  color: white;
   min-width: 600px;
 }
 
@@ -19,8 +19,10 @@ header {
   padding: 1rem;
   overflow: hidden;
   background: #242e39;
-  opacity: 0;
-  transition: opacity 0.3s;
+}
+
+header .logo a {
+  color: white;
 }
 
 header .logo svg {
@@ -31,7 +33,8 @@ header .logo svg {
   transform-origin: center;
 }
 
-header.is-fixed {
+header.is-fixed,
+body[data-fix-header="true"] header {
   opacity: 1;
   position: fixed;
   z-index: 100;
@@ -43,6 +46,16 @@ h1 {
   position: relative;
   text-align: left;
   font-weight: 800;
+}
+p {
+  margin-bottom: 1rem;
+}
+a {
+  text-decoration: none;
+  color: #e87620;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 main {
@@ -61,6 +74,7 @@ nav {
 }
 
 nav a {
+  font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -173,4 +187,22 @@ footer {
   margin-top: 2rem;
   padding: 2rem;
   text-align: center;
+}
+
+.route-careers {
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.careers-subheading {
+  margin-bottom: 2rem;
+}
+
+.masonry-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.masonry-grid > img {
+  max-width: 50%;
 }

@@ -2,11 +2,13 @@ import { useRef, useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import "./App.css";
 import { Link } from "react-router";
+import { Header } from "./Header.tsx";
 
 const SLIDES = [
   {
     imgUrl: "https://showpro.net/images/portfolio_teasers/special_events2.jpg",
     title: "Special Events",
+    path: "/special-events",
   },
   {
     imgUrl:
@@ -36,50 +38,28 @@ const SLIDES = [
 ];
 
 export const Home = () => {
-  const [fixHeader, setFixHeader] = useState(false);
   const pageRef = useRef<HTMLDivElement>(null);
 
   return (
     <div ref={pageRef}>
-      <header className={fixHeader ? "is-fixed" : undefined}>
-        <div className="logo">
-          <h1>SHOWPRO</h1>
-          <svg
-            width="300px"
-            height="275px"
-            viewBox="0 0 300 275"
-            xmlns="http://www.w3.org/2000/svg"
-            version="1.1"
-          >
-            <polygon
-              fill="orange"
-              stroke="orange"
-              stroke-width="10"
-              color="orange"
-              points="150,25 179,111 269,111 197,165  223,251 150,200 77,251 103,165 31,111 121,111"
-            />
-          </svg>
-        </div>
-        <blockquote>Where art and technology meet</blockquote>
-      </header>
-      <nav>
-        <Link to="/capabilities">Capabilities</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/careers">Careers</Link>
-        <Link to="/blog">Blog</Link>
-      </nav>
+      <Header />
       <main>
         <Parallax
           speed={-5}
           scale={[2, 1]}
-          startScroll={100}
+          startScroll={0}
           endScroll={320}
           translateX={[0, -32]}
           onProgressChange={(progress) => {
             if (pageRef.current) {
-              pageRef.current.style.setProperty("--scroll-progress", String(progress));
+              pageRef.current.style.setProperty(
+                "--scroll-progress",
+                String(progress),
+              );
             }
-            setFixHeader(progress >= 1);
+            document
+              .querySelector("body")!
+              .setAttribute("data-fix-header", String(window.scrollY >= 100));
           }}
         >
           <div className="hero">
@@ -89,19 +69,21 @@ export const Home = () => {
         </Parallax>
 
         <div className="slides">
-          {SLIDES.map(({ imgUrl, title }, i) => (
-            <div className="gallery-item">
-              <div className="item-bg" />
-              <Parallax
-                key={i}
-                //speed={10 * (i / 2)}
-                speed={5}
-                //scaleY={[1, 0.8]}
-                easing="easeInQuad"
-              >
-                <img alt={title} src={imgUrl} />
-              </Parallax>
-              <h3>{title}</h3>
+          {SLIDES.map(({ imgUrl, title, path }, i) => (
+            <div key={imgUrl} className="gallery-item">
+              <Link to={path ?? "#"}>
+                <div className="item-bg" />
+                <Parallax
+                  key={i}
+                  //speed={10 * (i / 2)}
+                  speed={5}
+                  //scaleY={[1, 0.8]}
+                  easing="easeInQuad"
+                >
+                  <img alt={title} src={imgUrl} />
+                </Parallax>
+                <h3>{title}</h3>
+              </Link>
             </div>
           ))}
         </div>
@@ -111,7 +93,6 @@ export const Home = () => {
         <p>For booking information, or general inquiries:</p>
 
         <h3>Michael Madsen, Head of Business Development</h3>
-
       </footer>
     </div>
   );
