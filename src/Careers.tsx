@@ -4,6 +4,13 @@ export const Careers = () => {
   return (
     <>
       <Header />
+      <div className="hero-banner">
+        <img
+          className="hero"
+          src="https://www.showpro.net/images/2024-06_blog_sunbelt.jpg"
+        />
+      </div>
+
       <div className="route-careers">
         <h3 className="careers-subheading">
           We are always on the lookout for sharp, creative folks who love to
@@ -16,10 +23,10 @@ export const Careers = () => {
           video, lighting, LED or programming teams.
         </p>
         <a
+          className="button"
           href="mailto:info@showpro.net"
           target="_blank"
           id="btn-cfc534e5-2704-4bcd-a7fe-5d53e631292a"
-          className="sppb-btn  sppb-btn-default sppb-btn-rounded"
         >
           FREELANCER INQUIRIES
         </a>

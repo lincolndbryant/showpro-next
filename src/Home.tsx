@@ -3,6 +3,7 @@ import { Parallax } from "react-scroll-parallax";
 import "./App.css";
 import { Link } from "react-router";
 import { Header } from "./Header.tsx";
+import { Footer } from "./Footer.tsx";
 
 const SLIDES = [
   {
@@ -89,11 +90,7 @@ export const Home = () => {
         </div>
       </main>
 
-      <footer>
-        <p>For booking information, or general inquiries:</p>
-
-        <h3>Michael Madsen, Head of Business Development</h3>
-      </footer>
+      <Footer />
     </div>
   );
 };

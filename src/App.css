@@ -1,5 +1,7 @@
 #root {
   --scroll-progress: 0;
+  --color-showpro-bg: #242e39;
+
   margin: 0 auto;
   padding: 0;
   /*height: 300vh;*/
@@ -12,25 +14,34 @@
 header {
   display: flex;
   align-items: center;
+  justify-content: stretch;
   gap: 1rem;
   width: 100%;
   top: 0;
   left: 0;
   padding: 1rem;
   overflow: hidden;
-  background: #242e39;
+  background: var(--color-showpro-bg);
 }
-
+header .logo {
+  margin-bottom: 1rem;
+}
 header .logo a {
   color: white;
 }
-
 header .logo svg {
   position: absolute;
   top: 0;
   left: 0;
   transform: scale(0.11) translateX(22%) translateY(-225%);
   transform-origin: center;
+}
+header blockquote {
+  flex-grow: 1;
+  font-style: italic;
+}
+header .social-links {
+  padding-right: 1rem;
 }
 
 header.is-fixed,
@@ -57,22 +68,42 @@ a {
 a:hover {
   text-decoration: underline;
 }
+h3 {
+  font-size: 25px;
+}
+h4 {
+  font-size: 20px;
+}
+h3,
+h4 {
+  text-transform: uppercase;
+}
+a.button {
+  display: inline-block;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 5px;
+}
 
 main {
   background: black;
 }
 
-nav {
+.nav-wrapper {
   position: fixed;
-  background: #242e39;
+  top: 0;
+  right: 0;
   padding: 1rem;
-  display: flex;
-  gap: 1rem;
-  top: 1rem;
-  right: 1rem;
   z-index: 101;
 }
 
+nav {
+  display: flex;
+  padding: 1rem;
+  background: var(--color-showpro-bg);
+  gap: 1rem;
+}
 nav a {
   font-weight: bold;
   text-transform: uppercase;
@@ -188,9 +219,47 @@ footer {
   padding: 2rem;
   text-align: center;
 }
+footer .contact-number {
+  text-align: center;
+}
+footer .social-links {
+  margin-top: 40px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.social-links a {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  color: #333;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 50%;
+}
+.social-links a:hover {
+  text-decoration: none;
+}
+
+.hero-banner {
+  position: relative;
+  height: 300px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+.hero-banner img {
+  position: absolute;
+  width: 100%;
+  top: -50%;
+}
 
 .route-careers {
   max-width: 1200px;
+  margin: 0 auto;
   padding: 0 2rem;
 }
 

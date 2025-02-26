@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router";
+import { SocialLinks } from "./SocialLinks.tsx";
 
 export const Header = () => {
   useEffect(() => {
@@ -33,12 +34,16 @@ export const Header = () => {
         </Link>
       </div>
       <blockquote>Where art and technology meet</blockquote>
-      <nav>
-        <Link to="/capabilities">Capabilities</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/careers">Careers</Link>
-        <Link to="https://blog.showpro.net/">Blog</Link>
-      </nav>
+      <div className="nav-wrapper">
+        <nav>
+          <Link to="/capabilities">Capabilities</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/careers">Careers</Link>
+          <Link to="https://blog.showpro.net/">Blog</Link>
+        </nav>
+
+        <SocialLinks />
+      </div>
     </header>
   );
 };
